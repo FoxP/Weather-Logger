@@ -2,7 +2,7 @@
 
 ## About
 Simple Python script to log [METAR](https://en.wikipedia.org/wiki/METAR) and [TAF](https://en.wikipedia.org/wiki/Terminal_aerodrome_forecast) weather reports from [aviation.meteo.fr](https://aviation.meteo.fr) XML API to CSV files.  
-Since v2.0, can also download WINTEM, TEMSI FRANCE and TEMSI EUROC maps to PDF files. Enjoy.
+Since v2.0, can also download WINTEM, TEMSI FRANCE and TEMSI EUROC maps to PDF files. Enjoy !
 
 ## Usage
 Run `weather_logger.py` with a `config.ini` file path as `-c` command line argument, for example from a [cron](https://en.wikipedia.org/wiki/Cron) job.  
@@ -14,8 +14,7 @@ Crontab every 10 minutes ? There you go :
 :warning: The `cd /SCRIPT_PATH/` command from the example above is **MANDATORY** in a cron job if you want to use relative paths in your `config.ini` configuration file. You are welcome.
 
 ## Output
-1. CSV file(s) containing METAR / TAF reports in the following format : `YYYY-MM-DD HH:mm METAR_OR_TAF_REPORT`  
-  
+#### 1. CSV file(s) containing METAR / TAF reports in the following format : `YYYY-MM-DD HH:mm METAR_OR_TAF_REPORT`
 For `LFPG` [ICAO](https://en.wikipedia.org/wiki/ICAO_airport_code) airport code, for example :
 - `METAR_LFPG.csv` :
 ```
@@ -28,8 +27,7 @@ For `LFPG` [ICAO](https://en.wikipedia.org/wiki/ICAO_airport_code) airport code,
 2018-02-22 16:00 TAF AMD LFPG 220719Z 2207/2312 03010G20KT 5000 BR NSC TEMPO 2207/2210 3000 BR TEMPO 2210/2218 4500 HZ TX04/2215Z TNM03/2306Z=
 ```
 
-2. PDF file(s) for WINTEM, TEMSI FRANCE and TEMSI EUROC maps :  
-
+#### 2. PDF file(s) for WINTEM, TEMSI FRANCE and TEMSI EUROC maps :  
 - `EUROC_0.pdf`
 - `EUROC_1.pdf`
 - `TEMSI_0.pdf`
@@ -50,9 +48,9 @@ TAF_logging = True
 METAR_logging = True
 ; Should I save WINTEM maps to PDF? If True, yes. If False, nope
 WINTEM_logging = True
-; Should I save TEMSI maps to PDF? If True, yes. If False, nope
+; Should I save TEMSI FRANCE maps to PDF? If True, yes. If False, nope
 TEMSI_logging = True
-; Should I save EUROC maps to PDF? If True, yes. If False, nope
+; Should I save TEMSI EUROC maps to PDF? If True, yes. If False, nope
 EUROC_logging = True
 ; List of ICAO airport codes, comma separated
 ICAO_airport_codes = LFPG,LFPO,PHTO,EGLL
