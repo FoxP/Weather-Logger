@@ -1,8 +1,10 @@
 # Weather Logger
 
 ## About
-Simple Python script to log [METAR](https://en.wikipedia.org/wiki/METAR) and [TAF](https://en.wikipedia.org/wiki/Terminal_aerodrome_forecast) weather reports from [aviation.meteo.fr](https://aviation.meteo.fr) XML API to CSV files.  
-Since v2.0, can also download WINTEM, TEMSI FRANCE and TEMSI EUROC maps to PDF files. Enjoy !
+Simple Python script to log [METAR](https://en.wikipedia.org/wiki/METAR) and [TAF](https://en.wikipedia.org/wiki/Terminal_aerodrome_forecast) weather reports from [aviation.meteo.fr](https://aviation.meteo.fr) XML API (AEROWEB) to CSV files.  
+Since v2.0, can also download WINTEM, TEMSI FRANCE and TEMSI EUROC maps to PDF files. Enjoy !  
+  
+AEROWEB data are free and provided by [Météo-France](http://www.meteofrance.com/accueil). You need to complete and sign in triplicate the [AEROWEB Server agreement](docs/Convention type AEROWEB SERVEUR_2017) and send it by mail (**webmaster . aeroweb AT meteo . fr**) and then by post to receive your AEROWEB Server identifier.
 
 ## Usage
 Run `weather_logger.py` with a `config.ini` file path as `-c` command line argument, for example from a [cron](https://en.wikipedia.org/wiki/Cron) job.  
@@ -54,7 +56,7 @@ TEMSI_logging = True
 EUROC_logging = True
 ; List of ICAO airport codes, comma separated
 ICAO_airport_codes = LFPG,LFPO,PHTO,EGLL
-; Your 10 digits aeronautical code
+; Your AEROWEB server identifier
 user_code = XXXXXXXXXX
 
 [Directory]
@@ -65,7 +67,8 @@ pdf_directory = ./pdf/
 ```
 
 ## XML API overview
-- For `LFPG` and `LFPO` [ICAO](https://en.wikipedia.org/wiki/ICAO_airport_code) airport codes for example, [aviation.meteo.fr](https://aviation.meteo.fr) XML API will output the following document :
+See the [technical documentation](docs/Documentation serveur de données AEROWEB_5.6.0.pdf) for details.
+- For `LFPG` and `LFPO` [ICAO](https://en.wikipedia.org/wiki/ICAO_airport_code) airport codes for example, AEROWEB XML API will output the following document :
 
 ```xml
 <?xml version="1.0" encoding="ISO-8859-1"?>
@@ -119,7 +122,7 @@ pdf_directory = ./pdf/
 </groupe>
 ```
 
-- For `WINTEM`, `TEMSI FRANCE` and `TEMSI EUROC`, [aviation.meteo.fr](https://aviation.meteo.fr) XML API will output the following document structure :
+- For `WINTEM`, `TEMSI FRANCE` and `TEMSI EUROC`, AEROWEB XML API will output the following document structure :
 
 ```xml
 <?xml version="1.0" encoding="ISO-8859-1"?>
